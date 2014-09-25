@@ -1,0 +1,105 @@
+# post:
+#   fields:
+#     content: text
+#     title: varchar(255)
+#   relations:
+#     tag: many
+#     comment: many
+
+# section:
+#   fields:
+#     title: varchar(255)
+#   relations:
+#     category: many
+
+# user:
+#   fields:
+#     name: varchar(255)
+#     email: varchar(255)
+#   relations:
+#     comment: many
+
+# tag:
+#   fields:
+#     name: varchar(255)
+#   relations:
+#     post: many
+
+# category:
+#   fields:
+#     title: varchar
+#   relations:
+#     section: one
+
+# comment:
+#   fields:
+#     date: integer
+#     text: varchar(255)
+#     author: varchar(255)
+#   relations:
+#     user: one
+#     post: one
+
+
+
+Article:
+  fields:
+      title: varchar(50)
+      text: text
+  relations:
+      Category: one
+      Tag: many
+
+Category:
+  fields:
+      title: varchar(50)
+  relations:
+      Article: many
+
+Tag:
+  fields:
+      value: varchar(50)
+  relations:
+      Article: many
+
+# Cafe:
+#     fields:
+#         Title: varchar
+#     relations:
+#         Dish: many
+
+# Dish:
+#     fields:
+#         Title: varchar
+#         Price: numeric
+#     relations:
+#         Cafe: many
+
+# Order:
+#     fields:
+#         Title: varchar
+#     relations:
+#         Payment: one
+#         Discount: one
+#         User: one
+
+# User:
+#     fields:
+#         FirstName: varchar
+#         LastName: varchar
+#         Email: varchar
+#     relations:
+#         Order: many
+
+# Discount:
+#     fields:
+#         Amount: int
+#     relations:
+#         Order: many
+
+# Payment:
+#     fields:
+#         Total: numeric
+#     relations:
+#         Order: one
+

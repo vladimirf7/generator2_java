@@ -1,0 +1,3 @@
+class RelationException extends Exception {
+    
+}
